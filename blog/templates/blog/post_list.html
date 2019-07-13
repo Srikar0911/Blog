@@ -9,17 +9,19 @@
 	
 </head>
 <body>
-	<div>
+	<div class = "container">
 		<h1>
 			<a href="">Blog Channel</a>
 
 		</h1>
 	</div>
 	{% for post in posts %}
-    <div>
-        <p>Pen_name: {{ post.pen_name }}</p>
+    <div class = "container">
+        <p><h2>Pen_name: </h2><h3>{{ post.pen_name }}</h3></p>
         <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
         <p>{{ post.text|linebreaksbr }}</p>
+    
+    <hr>
     </div>
 	{% endfor %}
 	

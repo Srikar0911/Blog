@@ -8,8 +8,10 @@
             </div>
         {% endif %} -->
         <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
-        <h2>{{ post.title }}</h2>
-        <h2>written by:{{post.pen_name}}</h2>
+        <h2>Title:</h2><h3>{{ post.title }}</h3>
         <p>{{ post.text|linebreaksbr }}</p>
+        <h2>Written by:</h2><h3>{{post.pen_name}}</h3>
+        <h2>Rating</h2><h3>{{post.rating}}</h3>
+        <hr>
     </div>
 {% endblock %}
