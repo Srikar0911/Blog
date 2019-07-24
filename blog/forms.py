@@ -2,7 +2,6 @@ from django import forms
 
 from .models import Post
 from .models import Comment
-from bootstrap_modal_forms.forms import BSModalForm
 
 class PostForm(forms.ModelForm):
 
