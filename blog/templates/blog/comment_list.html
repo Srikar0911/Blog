@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>User Reviews</title>
+	<title>User Comments</title>
 	<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> -->
 	<!-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"> -->
 	<!-- <link rel="stylesheet" type="text/css" href="{%static 'css/blog.css' %}"> -->
@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.css' %}">
 	
 </head>
-<body class = "bg-white">
+<body>
 	<div class = "container">
 		<!-- <h1>
 			<a href="">Blog Channel</a>
@@ -19,11 +19,12 @@
 		<hr> -->
 		<!-- <i class="fas fa-plus"></i> -->
 		<nav class="navbar navbar-dark bg-dark ">
-  			<a class="navbar-brand font-weight-bolder h3 " href="{% url 'post_list' %}"><i class="far fa-sticky-note"></i>Blog</a>
+  			<a class="navbar-brand font-weight-bolder h3" href="{% url 'post_list' %}"><i class="far fa-sticky-note"></i>Blog</a>
   			<ul class="navbar-nav">
 		      	<li class="nav-item active">
-		        <a class="nav-link" href="{% url 'post_new' %}"><i class="fas fa-plus"></i>Post <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="{% url 'post_new' %}"><i class="fas fa-plus"></i>Post<span class="sr-only">(current)</span></a>
 		      </li>
+		     
 		    </ul>
 		</nav>
 		<!-- <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus">CreateNew</span></a> -->
@@ -31,15 +32,11 @@
 	</div>
 
 
-	{% for post in posts %}
+	{% for comment in comments %}
     <div class = "container text-inline">
-        <h3 >Pen_name: </h3><p class = "font-italic h5" >{{ post.pen_name }}</p>
-        <h3 ><a  href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
-        <p>{{ post.text|linebreaksbr }}</p>
-        <div class = "text-inline text-secondary" >		
-        <a class = "btn btn-dark" href ="{% url 'comment_new' key=post.pk %}"><i class="fas fa-plus"></i>NewComment</a>
-        <a class = "btn btn-dark" href="{% url 'comment_list' key=post.pk %}">Comments</a>
-    	</div>
+        <h2 class = "h3">Pen_name: </h2><span class = "text-body font-italic" >{{ comment.pen_name }}</span>
+        <h3 ><a class = "text-secondary" href="{% url 'comment_detail' pk=comment.pk %}">{{ comment.title }}</a></h3>
+        <p class = "border bg-light">{{ comment.text|linebreaksbr }}</p>
     	<hr>
     </div>
 	{% endfor %}

@@ -16,3 +16,16 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title	
+
+class Comment(models.Model):
+    pen_name = models.CharField(max_length=200)
+    title = models.CharField(max_length = 200)
+    text = models.TextField()
+    key = models.IntegerField()
+
+    def publish(self):
+        # self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title   
