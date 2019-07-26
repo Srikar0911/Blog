@@ -18,21 +18,25 @@
 		</h1>
 		<hr> -->
 		<!-- <i class="fas fa-plus"></i> -->
-		<nav class="navbar fixed-top navbar-dark bg-dark mr-5 ml-5 ">
-  			<a class="navbar-brand font-weight-bolder h3 " href="{% url 'post_list' %}"><!-- <i class="far fa-sticky-note"></i> -->Blog</a>
-  			<ul class="navbar-nav">
+		<nav class="navbar fixed-top navbar-dark bg-dark mr-5 ml-5 pb-1">
+  			<a class="navbar-brand font-weight-bolder  " href="{% url 'post_list' %}"><!-- <i class="far fa-sticky-note"></i> -->Blog</a>
+  			<ul class="navbar-nav mr-auto">
 		      	<li class="nav-item active">
-		        <a class="nav-link" href="{% url 'post_new' %}"><!-- <i class="fas fa-plus"></i> -->Post <span class="sr-only">(current)</span></a>
+		        <a class="nav-link float-left" href="{% url 'post_new' %}"><!-- <i class="fas fa-plus"></i> -->Post <span class="sr-only">(current)</span></a>
 		      </li>
 		    </ul>
+		    <form method="get" action="{% url 'search' %}"style="margin: 0">
+    		<input  id="search_box" type="text" name="search_box"  placeholder="Search..." >
+   			<button id="search_submit" type="submit" >Submit</button>
+			</form>
 		</nav>
 		<!-- <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus">CreateNew</span></a> -->
 		
 	</div>
-
-
+	<div class = "mt-5 mb-5">
+	</div>
 	{% for post in posts %}
-    <div class = "container text-inline">
+    <div class = " container text-inline">
         <h3 >Pen_name: </h3><p class = "font-italic h5" >{{ post.pen_name }}</p>
         <h3 ><a  href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
         <p>{{ post.text|linebreaksbr }}</p>
@@ -46,7 +50,7 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-	<script src="{% static 'js/jquery.bootstrap.modal.forms.min.js' %}"></script>
+	
 	
 </body>
 </html>

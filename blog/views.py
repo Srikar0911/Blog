@@ -11,6 +11,9 @@ from .forms import CommentForm
 def post_list(request):
     posts = Post.objects.all()
     return render(request, 'blog/post_list.html', {'posts': posts})
+# def post_list_1(request,title):
+#     posts = get_list_or_404(Post,title = title)
+#     return render(request,'blog/post_list.html',{'posts':posts})
 def comment_list(request,key):
     comments = get_list_or_404(Comment,key = key)
     return render(request, 'blog/comment_list.html', {'comments': comments})
@@ -26,6 +29,12 @@ def post_new(request):
     else:
         form = PostForm()
     return render(request, 'blog/post_edit.html', {'form': form})
+def search(request):
+    if request.method == 'GET':
+        search_query = request.GET.get('search_box')
+        posts = get_list_or_404(Post,title = search_query)
+        return render(request,'blog/post_list.html',{'posts':posts})
+
 def comment_new(request,key):
     if request.method == "POST":
         form = CommentForm(request.POST)

@@ -18,8 +18,8 @@
 		</h1>
 		<hr> -->
 		<!-- <i class="fas fa-plus"></i> -->
-		<nav class="navbar fixed-top navbar-dark bg-dark mr-5 ml-5">
-  			<a class="navbar-brand font-weight-bolder h3" href="{% url 'post_list' %}"><!-- <i class="far fa-sticky-note"></i> -->Blog</a>
+		<nav class="navbar fixed-top navbar-dark bg-dark mr-5 ml-5 pb-1">
+  			<a class="navbar-brand font-weight-bolder" href="{% url 'post_list' %}"><!-- <i class="far fa-sticky-note"></i> -->Blog</a>
   			<ul class="navbar-nav">
 		      	<li class="nav-item active">
 		        <a class="nav-link" href="{% url 'post_new' %}"><!-- <i class="fas fa-plus"></i> -->Post<span class="sr-only">(current)</span></a>
@@ -30,7 +30,8 @@
 		<!-- <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus">CreateNew</span></a> -->
 		
 	</div>
-
+	<div class = "mt-5 mb-5">
+	</div>
 
 	{% for comment in comments %}
     <div class = "container text-inline">

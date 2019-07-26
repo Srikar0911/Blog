@@ -10,4 +10,6 @@ urlpatterns = [
     path('post/comment/<int:pk>/', views.comment_detail, name='comment_detail'),
     path('post/comment/<int:key>/new/', views.comment_new, name='comment_new'),
     path('post/comment/<int:pk>/<int:key>/edit/', views.comment_edit, name='comment_edit'),
+    path('?search_box=',views.search,name = 'search'),
+    # url(r'^?$', 'views.search', name='search'),
     ]
