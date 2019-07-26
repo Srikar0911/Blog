@@ -35,7 +35,7 @@ def comment_new(request,key):
             #post.published_date = timezone.now()
             comment.key = key
             comment.save()
-            return redirect('comment_detail', pk = comment.pk)
+            return redirect('comment_list', key = comment.key)
     else:
         form = CommentForm()
     return render(request, 'blog/comment_edit.html', {'form': form})

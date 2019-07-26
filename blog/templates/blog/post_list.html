@@ -18,11 +18,11 @@
 		</h1>
 		<hr> -->
 		<!-- <i class="fas fa-plus"></i> -->
-		<nav class="navbar navbar-dark bg-dark ">
-  			<a class="navbar-brand font-weight-bolder h3 " href="{% url 'post_list' %}"><i class="far fa-sticky-note"></i>Blog</a>
+		<nav class="navbar fixed-top navbar-dark bg-dark mr-5 ml-5 ">
+  			<a class="navbar-brand font-weight-bolder h3 " href="{% url 'post_list' %}"><!-- <i class="far fa-sticky-note"></i> -->Blog</a>
   			<ul class="navbar-nav">
 		      	<li class="nav-item active">
-		        <a class="nav-link" href="{% url 'post_new' %}"><i class="fas fa-plus"></i>Post <span class="sr-only">(current)</span></a>
+		        <a class="nav-link" href="{% url 'post_new' %}"><!-- <i class="fas fa-plus"></i> -->Post <span class="sr-only">(current)</span></a>
 		      </li>
 		    </ul>
 		</nav>
@@ -37,7 +37,7 @@
         <h3 ><a  href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
         <p>{{ post.text|linebreaksbr }}</p>
         <div class = "text-inline text-secondary" >		
-        <a class = "btn btn-dark" href ="{% url 'comment_new' key=post.pk %}"><i class="fas fa-plus"></i>NewComment</a>
+        <a class = "btn btn-dark" href ="{% url 'comment_new' key=post.pk %}"><!-- <i class="fas fa-plus"></i> -->NewComment</a>
         <a class = "btn btn-dark" href="{% url 'comment_list' key=post.pk %}">Comments</a>
     	</div>
     	<hr>
